@@ -50,7 +50,7 @@ def keyboard_choice_topic_register():
     text = "ДОБАВИТЬ ТЕМУ\n\n(Только для администраторов)",
     callback_data= "ADD_TOPIC"
     )
-    inline_topics_kb_builder.row(*generate_inline_keyboard(Dict["Topics"]),width=3)
+    inline_topics_kb_builder.row(*generate_inline_keyboard(Dict["Topics"]),width=2)
     inline_topics_kb_builder.row(addTopicButton,width=1)
 
     logger.debug("||||||||||||||||||||||||||||||| Клавиатура инициализированна")
