@@ -53,7 +53,7 @@ URL_REGEX = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F]
 
 
 #Сделать хендлер,который на медиагруппу реагирует
-@router.message(F.media_group_id,StateFilter(default_state))
+@router.message(F.media_group_id)
 async def media_group_process(message: Message,state: FSMContext):
 
     media_group_id = message.media_group_id
@@ -120,7 +120,7 @@ async def media_group_process(message: Message,state: FSMContext):
 
 
 
-@router.message(or_f(F.photo,F.video,F.document,F.audio,F.forward_date, WordCountFilter(),lambda message: re.search(URL_REGEX, message.text)),StateFilter(default_state))
+@router.message(or_f(F.photo,F.video,F.document,F.audio,F.forward_date, WordCountFilter(),lambda message: re.search(URL_REGEX, message.text)))
 async def forward_message(message: Message,state : FSMContext):
     logger.debug("Хендлер пересланного сообщения")
     inline_topics_kb_builder = keyboard_choice_topic_register()

@@ -24,7 +24,9 @@ bot = Bot(token = config.tg_bot.token)
 
 chat_id = config.tg_group_id.id
 
-Dict = PersistentDict(r"C:\Projects\PIVO_BOT_v1\Data_base\dicts.json")
+Dict = PersistentDict('/home/FlexGod/Pivo_bot/FORUM_BOT/Data_base/dicts.json')
+#Заменить на r"C:\Projects\PIVO_TEST\Data_base\dicts.json" во время тестов
+
 
 @router.message(Command(commands='clear'))
 async def create_topik_procesing_name(message: Message, state : FSMContext):

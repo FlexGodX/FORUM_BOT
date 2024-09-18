@@ -23,7 +23,9 @@ choice_tag_kb = InlineKeyboardMarkup(inline_keyboard=[[yes_tag_button],[no_tag_b
 
 #--------Клавиатура выбора темы------------
 def keyboard_choice_topic_register():
-    Dict = PersistentDict(r"C:\Projects\PIVO_BOT_v1\Data_base\dicts.json")
+    Dict = PersistentDict('/home/FlexGod/Pivo_bot/FORUM_BOT/Data_base/dicts.json')
+    #Заменить на r"C:\Projects\PIVO_TEST\Data_base\dicts.json" во время тестов
+
     inline_topics_kb_builder = InlineKeyboardBuilder()
 
     otmenbutton = InlineKeyboardButton(
